@@ -8,5 +8,6 @@ const connectDB = ()=>{mongoose.connect(process.env.DB_URL)
     console.log(err.message)
 })
 }
+// console.log("process.env.DB_URL",process.env.DB_URL)
 
 module.exports = connectDB  

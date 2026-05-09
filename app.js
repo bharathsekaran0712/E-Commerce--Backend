@@ -4,7 +4,7 @@ const user =  require("./routes/userRoutes")
 const cartRoutes = require("./routes/cartRoutes");
 const order  = require("./routes/orderRoutes")
 const address = require("./routes/addressRoutes")
-const paymentRoute = require("./routes/paymentRoute")
+const paymentRoutes = require("./routes/paymentRoutes")
 const cors = require("cors")
 
 
@@ -24,7 +24,8 @@ app.use("/api/v1",user)
 app.use("/api/", cartRoutes);
 app.use("/api/v1",order)
 app.use("/api/address",address)
-app.use("/api/payment", paymentRoute)
+app.use("/api/payment", paymentRoutes)
+
 
 
 
