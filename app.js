@@ -5,16 +5,16 @@ const cartRoutes = require("./routes/cartRoutes");
 const order  = require("./routes/orderRoutes")
 const address = require("./routes/addressRoutes")
 const paymentRoutes = require("./routes/paymentRoutes")
-// const cors = require("cors")
+const cors = require("cors")
 
 
 const app = express()
 
-// app.use(
-//     cors({ origin: "http://localhost:5173" , 
-//         methods: ["GET","POST","PUT","DELETE"]
-//     })
-// )
+app.use(
+    cors({ origin: "*" , 
+        methods: ["GET","POST","PUT","DELETE"]
+    })
+)
 
 
 app.use(express.json())
