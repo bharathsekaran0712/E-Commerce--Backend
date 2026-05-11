@@ -7,7 +7,7 @@ exports.registerUser = async(req,res)=>{
     try {
         const {name,emailORphone,password,role}=req.body
 
-        const userExists = await User.findOne({email:emailORphone})
+        const userExists = await User.findOne({emailORphone:emailORphone})
 
         if(userExists){
             return res.status(400).json({
@@ -40,7 +40,7 @@ exports.registerUser = async(req,res)=>{
 exports.loginUser = async(req,res)=>{
     try {
         const {emailORphone,password,role} = req.body
-        const user = await User.findOne({emailORphone})
+        const user = await User.findOne({emailORphone:emailORphone})
 
         if(!user){
             return res.status(400).json({
@@ -56,7 +56,7 @@ exports.loginUser = async(req,res)=>{
                 message:"Invalid password"
             })
         }
-        
+         
         const token = jwt.sign(
             {userId:user._id},
             process.env.JWT_SECRET_KEY,
