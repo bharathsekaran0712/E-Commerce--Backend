@@ -29,7 +29,7 @@ app.use("/api/v1", user)
 app.use("/api/", cartRoutes)
 app.use("/api/v1", order)
 app.use("/api/address", address)
-app.use("/api/payment", paymentRoutes)
+app.use("/api/v1", paymentRoutes)
 
 // MongoDB Connection + Server Start
 const startServer = async () => {
