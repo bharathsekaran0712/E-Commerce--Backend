@@ -10,6 +10,7 @@ const cartRoutes = require("./routes/cartRoutes")
 const order = require("./routes/orderRoutes")
 const address = require("./routes/addressRoutes")
 const paymentRoutes = require("./routes/paymentRoutes")
+const settingsRoutes = require("./routes/settingsRoutes")
 
 const app = express()
 
@@ -30,6 +31,7 @@ app.use("/api/", cartRoutes)
 app.use("/api/v1", order)
 app.use("/api/address", address)
 app.use("/api/v1", paymentRoutes)
+app.use("/api/v1", settingsRoutes)
 
 // MongoDB Connection + Server Start
 const startServer = async () => {
